@@ -81,6 +81,11 @@ void menu_update()
     BlitFullscreen(&menu_fsinfo, FULLSCREEN_COLUMNS_COLUMNS);
 
     frame_time++;
-    frame_time &= 0x00FF;
+    //frame_time &= 0x00FF;
+    if( frame_time >= 0x100 )
+    {
+        SetStage(menu2_update);
+        return;
+    }
     frame_delay = MENU_DELAY_TIME;
 }

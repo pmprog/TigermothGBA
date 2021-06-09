@@ -43,6 +43,7 @@ void BitBlit2BPPSub(const u8* Sprite, int SpriteW, int SpriteH, int SourceX, int
 // Blits 4BPP, with transparent
 void BitBlit4BPP(const u8* Sprite, int X, int Y, int W, int H);
 void BitBlit4BPPT(const u8* Sprite, int X, int Y, int W, int H, u8 TransparentColourIndex);
+void BitBlit4BPPSub(const u8* Sprite, int SpriteW, int SpriteH, int SourceX, int SourceY, int SourceW, int SourceH, int DestX, int DestY);
 
 // Fix region
 void FillRect(int X, int Y, int W, int H, u8 Colour);

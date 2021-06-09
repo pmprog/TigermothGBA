@@ -5,22 +5,22 @@ u16* vid_page = (u16*)VRAM;     // Point to current frame buffer
 
 // C64 palette
 const u16 c64palette[] = {
-    RGB8(   0,   0,   0 ),
-    RGB8( 255, 255, 255 ),
-    RGB8( 104,  55,  43 ),
-    RGB8( 112, 164, 178 ),
-    RGB8( 111,  61, 134 ),
-    RGB8(  88, 141,  67 ),
-    RGB8(  53,  40, 121 ),
-    RGB8( 184, 199, 111 ),
-    RGB8( 111,  79,  37 ),
-    RGB8(  67,  57,   0 ),
-    RGB8( 154, 103,  89 ),
-    RGB8(  68,  68,  68 ),
-    RGB8( 108, 108, 108 ),
-    RGB8( 154, 210, 132 ),
-    RGB8( 108,  94, 181 ),
-    RGB8( 149, 149, 149 )
+    RGB8(   0,   0,   0 ), //  0 : Black
+    RGB8( 255, 255, 255 ), //  1 : White
+    RGB8( 104,  55,  43 ), //  2 : Red
+    RGB8( 112, 164, 178 ), //  3 : Cyan
+    RGB8( 111,  61, 134 ), //  4 : Purple
+    RGB8(  88, 141,  67 ), //  5 : Green
+    RGB8(  53,  40, 121 ), //  6 : Blue
+    RGB8( 184, 199, 111 ), //  7 : Yellow
+    RGB8( 111,  79,  37 ), //  8 : Orange
+    RGB8(  67,  57,   0 ), //  9 : Brown
+    RGB8( 154, 103,  89 ), // 10 : Pink
+    RGB8(  68,  68,  68 ), // 11 : Dark Grey
+    RGB8( 108, 108, 108 ), // 12 : Mid Grey
+    RGB8( 154, 210, 132 ), // 13 : Light Green
+    RGB8( 108,  94, 181 ), // 14 : Light Blue
+    RGB8( 149, 149, 149 ), // 15 : Light Grey
 };
 
 void InitC64Palette()

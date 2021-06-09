@@ -56,6 +56,18 @@ void play_update()
 
     BitBlit2BPPSub(tilefaces_bin, 8, 384, 0, 16, 8, 8, 6 * 8, 13 * 8, &menu_palettes[9 * 4]);
 
+
+    int drawy = 150;
+    int curscore = player_score;
+    FillRect( 210, 86,  8, 72, 0 );
+    for(int i = 0; i < 8; i++)
+    {
+        int digit = 56 + (curscore % 10);
+        BitBlit2BPPSub(tilefaces_bin, 8, 576, 0, digit * 8, 8, 8, 210, drawy, &menu_palettes[7 * 4]);
+        drawy -= 8;
+        curscore = curscore / 10;
+    }
+
     frame_time++;
     frame_time &= 0x001F;
 }
@@ -67,7 +79,7 @@ void InitialisePlayer()
     player_a_cooldown = 16;
     player_b_cooldown = 320;
     player_a_cooldown_current = 0;
-    player_b_cooldown_current = 0;
+    player_b_cooldown_current = 320;
     player_a_spread = 0;
 }
 
@@ -174,7 +186,7 @@ void ControlPlayer()
     }
     if((keysHeld() & KEY_B) == KEY_B && player_b_cooldown_current == 0)
     {
-        for(int i = -120; i <= 120; i += 4)
+        for(int i = -120; i <= 120; i += 8)
         {
             SpawnBullet(player_x, player_y, i, 5, 3, 1, Bullet_PlayerStandard);
         }
@@ -194,6 +206,13 @@ void ControlTigermoth()
             if(segarray[idx].SpriteID != 0 && segarray[idx].Health > 0)
             {
                 int patternindex = (segarray[idx].BulletPattern << 5) + play_tigerbulletframe;
+
+                // Player is above the Tigermoth, let's encourage them to leave :)
+                if( player_y - 12 < (play_tigermoth.Head.Y >> 8) && idx == 0 )
+                {
+                    patternindex = (12 << 5) + play_tigerbulletframe;
+                }
+
                 int spreadindex = play_tigermoth_patterns[patternindex];
                 if( spreadindex > 0 )
                 {

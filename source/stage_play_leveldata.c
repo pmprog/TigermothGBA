@@ -34,7 +34,7 @@ const TigermothDetail play_tigermoth_level2 = {
 
 const TigermothDetail play_tigermoth_level3 = {
     180, 2,                 // Direction and Velocity
-  { 120 << 8, -24 << 8, 532, 40,  3, },    // Head
+  { 120 << 8, -24 << 8, 532, 40,  8, },    // Head
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Left
   { 120 << 8, -24 << 8,   0,  0,  1, },    // Row 1 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Right
@@ -49,12 +49,12 @@ const TigermothDetail play_tigermoth_level3 = {
 
 const TigermothDetail play_tigermoth_level4 = {
     180, 2,                 // Direction and Velocity
-  { 120 << 8, -24 << 8, 532, 50,  3, },    // Head
+  { 120 << 8, -24 << 8, 532, 50,  8, },    // Head
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Left
-  { 120 << 8, -24 << 8,   0,  0,  1, },    // Row 1 Centre
+  { 120 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Right
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 2 Left
-  { 120 << 8, -24 << 8, 548, 30,  1, },    // Row 2 Centre
+  { 120 << 8, -24 << 8, 548, 30,  2, },    // Row 2 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 2 Right
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Left
   { 120 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Centre
@@ -68,9 +68,9 @@ const TigermothDetail play_tigermoth_level5 = {
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Left
   { 120 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 1 Right
-  { 106 << 8, -24 << 8, 516, 20,  3, },    // Row 2 Left
-  { 120 << 8, -24 << 8, 564, 35,  0, },    // Row 2 Centre
-  { 134 << 8, -24 << 8, 516, 20,  3, },    // Row 2 Right
+  { 106 << 8, -24 << 8, 516, 20,  8, },    // Row 2 Left
+  { 120 << 8, -24 << 8, 564, 35,  2, },    // Row 2 Centre
+  { 134 << 8, -24 << 8, 516, 20,  8, },    // Row 2 Right
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Left
   { 120 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Right
@@ -80,9 +80,9 @@ const TigermothDetail play_tigermoth_level5 = {
 const TigermothDetail play_tigermoth_level6 = {
     180, 2,                 // Direction and Velocity
   { 120 << 8, -24 << 8, 532, 70,  9, },    // Head
-  { 106 << 8, -24 << 8, 516, 25,  1, },    // Row 1 Left
+  { 106 << 8, -24 << 8, 516, 25,  2, },    // Row 1 Left
   { 120 << 8, -24 << 8, 564, 40,  0, },    // Row 1 Centre
-  { 134 << 8, -24 << 8, 516, 25,  1, },    // Row 1 Right
+  { 134 << 8, -24 << 8, 516, 25,  2, },    // Row 1 Right
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 2 Left
   { 120 << 8, -24 << 8, 580, 40, 10, },    // Row 2 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 2 Right
@@ -98,9 +98,9 @@ const TigermothDetail play_tigermoth_level7 = {
   { 106 << 8, -24 << 8, 516, 30,  1, },    // Row 1 Left
   { 120 << 8, -24 << 8, 564, 50, 10, },    // Row 1 Centre
   { 134 << 8, -24 << 8, 516, 30,  1, },    // Row 1 Right
-  { 106 << 8, -24 << 8, 516, 30,  0, },    // Row 2 Left
+  { 106 << 8, -24 << 8, 516, 30,  8, },    // Row 2 Left
   { 120 << 8, -24 << 8, 564, 50, 10, },    // Row 2 Centre
-  { 134 << 8, -24 << 8, 516, 30,  0, },    // Row 2 Right
+  { 134 << 8, -24 << 8, 516, 30,  8, },    // Row 2 Right
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Left
   { 120 << 8, -24 << 8, 580, 40,  0, },    // Row 3 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Right
@@ -109,15 +109,15 @@ const TigermothDetail play_tigermoth_level7 = {
 
 const TigermothDetail play_tigermoth_level8 = {
     180, 3,                 // Direction and Velocity
-  { 120 << 8, -24 << 8, 532, 90,  0, },    // Head
-  { 106 << 8, -24 << 8, 516, 35,  0, },    // Row 1 Left
-  { 120 << 8, -24 << 8, 564, 50,  5, },    // Row 1 Centre
+  { 120 << 8, -24 << 8, 532, 90,  2, },    // Head
+  { 106 << 8, -24 << 8, 516, 35,  5, },    // Row 1 Left
+  { 120 << 8, -24 << 8, 564, 50,  0, },    // Row 1 Centre
   { 134 << 8, -24 << 8, 516, 35,  4, },    // Row 1 Right
   { 106 << 8, -24 << 8, 516, 35,  5, },    // Row 2 Left
   { 120 << 8, -24 << 8, 564, 50,  0, },    // Row 2 Centre
   { 134 << 8, -24 << 8, 516, 35,  4, },    // Row 2 Right
   { 106 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Left
-  { 120 << 8, -24 << 8, 580, 45,  0, },    // Row 3 Centre
+  { 120 << 8, -24 << 8, 580, 45,  2, },    // Row 3 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 3 Right
   { 120 << 8, -30 << 8,   0,  0,  0, },    // Row 6 Centre
 };
@@ -162,7 +162,7 @@ const TigermothDetail play_tigermoth_level11 = {
   { 120 << 8, -24 << 8, 548, 90, 10, },    // Row 2 Centre
   { 134 << 8, -24 << 8,   0,  0,  0, },    // Row 2 Right
   { 106 << 8, -24 << 8, 516, 60,  7, },    // Row 3 Left
-  { 120 << 8, -24 << 8, 564, 90,  9, },    // Row 3 Centre
+  { 120 << 8, -24 << 8, 564, 90, 13, },    // Row 3 Centre
   { 134 << 8, -24 << 8, 516, 60,  6, },    // Row 3 Right
   { 120 << 8, -30 << 8, 580, 80, 10, },    // Row 6 Centre
 };
