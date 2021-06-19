@@ -18,6 +18,8 @@ void play_update()
         play_level = 1;
         InitialiseTigermoth(play_level);
 
+        ClearExplosions();
+
         FillRect(  8, 8, 22, 34, 1 );
         FillRect( 10, 9,  8, 32, 0 );
         FillRect( 20, 9,  8, 32, 0 );
@@ -32,9 +34,20 @@ void play_update()
     FillRect( 22, 9 + (player_b_cooldown_current / 10),  1, 32 - (player_b_cooldown_current / 10), 13 );
 
     UpdateBullets();
+    if( (frame_time & 0x07) == 0x00 )
+    {
+        UpdateExplosions();
+    }
 
     if( player_dead != 0 )
     {
+        // Wait until all explosions are finished
+        if(CountExplosions() > 0)
+        {
+            frame_time++;
+            frame_time &= 0x001F;
+            return;
+        }
         mmStop();
         SetStage(gameover_update);
         return;
@@ -208,7 +221,7 @@ void ControlTigermoth()
                 int patternindex = (segarray[idx].BulletPattern << 5) + play_tigerbulletframe;
 
                 // Player is above the Tigermoth, let's encourage them to leave :)
-                if( player_y - 12 < (play_tigermoth.Head.Y >> 8) && idx == 0 )
+                if( player_y - 32 < (play_tigermoth.Head.Y >> 8) && idx == 0 )
                 {
                     patternindex = (12 << 5) + play_tigerbulletframe;
                 }
@@ -402,7 +415,15 @@ bool Bullet_PlayerStandard(int BulletIndex)
             {
                 // TODO: Detailed hitcheck?
                 segarray[idx].Health--;
-                if(segarray[idx].Health == 0) { player_score += 4 + (play_level * 2); } else { player_score++; }
+                if(segarray[idx].Health == 0) 
+                { 
+                    player_score += 4 + (play_level * 2); 
+                    CreateExplosion( tmx >> 8, tmy >> 8 );
+                }
+                else
+                {
+                    player_score++;
+                }
                 if( (player_score % 400) == 0 && player_a_spread < (player_score < 5000 ? 2 : 3)) { player_a_spread++; }
                 return false;
             }
@@ -419,6 +440,8 @@ bool Bullet_TigermothStandard(int BulletIndex)
     if( bx >= player_x - 1 && bx <= player_x + 2 && by >= player_y - 1 && by <= player_y + 2 )
     {
         player_dead = 1;
+        OAM[0].attr0 |= OBJ_DISABLE;
+        CreateExplosion( player_x, player_y );
         return false;
     }
 

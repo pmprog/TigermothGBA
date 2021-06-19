@@ -5,6 +5,7 @@
 #include "gba.h"
 #include "maths.h"
 #include "bullets.h"
+#include "explosions.h"
 #include "vars.h"
 #include <string.h>
 
